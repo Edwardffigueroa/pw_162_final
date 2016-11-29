@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="angular/app.js"></script>
+</head>
+<body>
+
+<div class="main" ng-app="myApp">
+
+    <div class="seccionlogin" ng-controller="loginCtrl">
+
+        <div class="form">
+
+
+            <img src="images/logo-black.png" alt="">
+            <h2>Iniciar sesión </h2>
+
+            <input type="text" name="FirstName" placeHolder="Cómo es tu usuario?" ng-model="user" required><br>
+
+            <input type="password" name="Pass" placeholder="Password" ng-model="pass"><br>
+            <input type="submit" value="Entrar" ng-click="startlogin()">
+
+            <a href="registro.html"><h4 ng-model="pass">Registrate</h4></a>
+        </div>
+
+    </div>
+
+    <div class="instrucciones">
+
+        <img src="images/img-instrucciones.png" alt="">
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

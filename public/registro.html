@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="angular/app.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+       
+       <header>
+       
+       <a href="index.html"><img src="images/logo-black.png" alt=""></a>
+       <h1>Formulario de registro</h1>
+       </header>
+       
+   <div class="main" ng-app="myApp">
+       
+            
+        <div class="form" ng-controller="registroCtrl" ng>
+            
+                    <img src="images/logo-black.png" alt="">
+                    <h2>Registrate</h2>
+                    <form >
+                       
+                        <input type="text" name="Nombres" placeHolder="Nombres" ng-model="nombres" required ><br>
+                        <input type="text" name="Apellidos" placeHolder="Apellidos" ng-model="apellidos" required><br>
+                        <input type="password" name="Pass" placeholder="Contraseña" ng-model="contrasena"><br>
+                        <input type="text" name="Carrera" placeHolder="Carrera" ng-model="carrera" required ><br>
+                        <input type="number" name="Codigo" placeHolder="Codigo Universitario" ng-model="codigo"required><br>
+                        <input type="submit" value="Registrarse" ng-click="startRegister()">
+                        <a href="inicioAng.html"><h4>Iniciar Sesión</h4></a>
+                        
+                    </form>
+
+        </div>  
+       
+   </div>
+    
+</body>
+</html>

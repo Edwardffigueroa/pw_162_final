@@ -1,0 +1,450 @@
+*{
+    
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    font-family: 'helvetica'
+}
+
+.main{
+    
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+    
+    
+}
+
+.seccionlogin{
+    
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+/*    background-color: bisque;*/
+    height: 700px;
+    justify-content: center;
+    
+    background-image: url(images/img-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.instrucciones{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 50%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    resize: horizontal;
+}
+
+.instrucciones img{
+    
+    width: auto;
+    height: 700px;
+    
+}
+
+
+
+.form{
+    
+    padding: 30px 9px;
+    width: 50%;
+    background-color: whitesmoke;
+-webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.2);
+box-shadow: 0 4px 15px 2px rgba(0,0,0,0.3);
+
+}
+
+/*-------------------------*/
+/*INICIO SESION--------------------------------------*/
+
+.form h2{
+    
+    margin: 15px;
+    font-size: 18px;
+}
+
+.form img{
+    
+    height: 40px;
+    width: auto;
+    
+}
+
+.form a{
+    text-decoration: none;
+    margin-top: 50px; 
+    color: darkslategray;
+}
+
+.form{
+    
+    text-align: center;
+    width: 50%;
+}
+
+input[name=FirstName], input[name=Email]{
+    width: 80%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+input[name=Pass]{
+    width: 80%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    
+}
+
+input[placeholder]{
+    font-size: helvetica;
+    font-size: 14px;
+}
+
+input[value=Entrar]{
+    width: 40%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+    
+    font-family: helvetica;
+    
+    font-size: 16px;
+    
+    border-radius: 5px;
+    background-color: black;
+    color: lightgray;
+    
+}
+
+input[value=Entrar]:hover{
+
+
+    -webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.3);
+box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
+    
+-webkit-transition: all 200ms ease-out;
+-moz-transition: all 200ms ease-out;
+-ms-transition: all 200ms ease-out;
+-o-transition: all 200ms ease-out;
+transition: all 200ms ease-out;
+  
+}
+
+
+/*-----------------REGISTRO-------------------*/
+
+header{
+    
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 15px;
+    align-items: center;
+    
+}
+
+header img{
+    
+    height: 60px;
+    margin-right: 20px;   
+}
+
+header h1{
+    padding: 8px 10px;
+    border-left: 3px solid black;
+    
+    
+    
+}
+
+
+input[name=FirstName], input[name=Email]{
+    width: 80%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+input{
+    width: 80%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    
+}
+
+
+input[placeholder]{
+    font-size: helvetica;
+    font-size: 14px;
+}
+
+input[value=Registrarse]{
+    width: 40%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+    
+    font-family: helvetica;
+    
+    font-size: 16px;
+    
+    border-radius: 5px;
+    background-color: black;
+    color: lightgray;
+    
+}
+
+input[value=Registrarse]:hover{
+
+    -webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.3);
+box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
+    
+-webkit-transition: all 250ms ease-out;
+-moz-transition: all 250ms ease-out;
+-ms-transition: all 250ms ease-out;
+-o-transition: all 250ms ease-out;
+transition: all 250ms ease-out;
+  
+}
+
+/*---------------INICIO-----------.*/
+
+.menu{
+    
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 70px;  
+    justify-content: space-around;
+    
+    -webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 18px 2px rgba(0,0,0,0.3);
+
+    
+}
+ 
+.menu img{
+    
+    height: 50px;
+    
+}
+.menu input{
+    
+    width: 70%;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: lightgray;
+    font-size: 20px;
+    
+}
+
+
+.menu .iconsMenu img{
+    
+    height: 35px;
+}
+
+/*ZONA DE CARDSVIEW*/
+.zona-cards{ 
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    min-height: 700px;
+    padding: 10px;
+    
+}
+
+.cardview{
+
+    min-height: 400px;
+    width: 280px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border-color: gray;
+    margin: 5px;
+    padding: 10px;
+    color: darkslategray;
+    display: flex;
+    flex-flow: column nowrap;
+    
+}
+
+.cardview img{
+
+    max-width: 260px;
+    
+}
+
+.cardview:hover{
+    
+-webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.2);
+box-shadow: 0 1px 10px 2px rgba(0,0,0,0.3);
+ 
+-webkit-transition: all 250ms ease-out;
+-moz-transition: all 250ms ease-out;
+-ms-transition: all 250ms ease-out;
+-o-transition: all 250ms ease-out;
+transition: all 250ms ease-out;
+
+}
+
+.user{
+    
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.user img{
+    
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+
+/*--------------MODAL----*/
+
+.visualizacionModal{
+    
+    display: flex;
+    flex-flow: column wrap;
+    padding: 20px;
+    
+}
+
+.areaImagen{
+
+    display: flex;
+    flex-flow: row wrap;
+    
+    justify-content: center;
+    width: 100%;
+    background-color: darkslategray;
+    
+}
+
+.infoPublicacion{
+    
+    width: 100%;
+    height: 80px;
+    
+    display: flex;
+    flex-flow: row;
+    
+    justify-content: space-around;
+}
+.areaChat{
+    width: 100%;
+    display: flex;
+    
+}
+.areaChat input{
+    
+    width: 80%;
+    height: 55px;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+
+.areaComentarios{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+}
+.comentario{
+    
+    margin-top: 15px;
+    display: flex;
+    width: 80%;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px;
+    
+    -webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.2);
+box-shadow: 0 1px 10px 2px rgba(0,0,0,0.3);
+
+}
+
+
+/*---- AREA SUBIR IMAGEN-----*/
+
+
+.visualizacionModal input[value=Subir]{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+
+
+.seccionFavoritos{
+    
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+}
+.favorito{
+    
+    margin-top: 15px;
+    display: flex;
+    width: 300px;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+.cardFavorito img{
+    width: 150px;
+    height: 150px;
+    
+}
+
+.cardFavorito{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    
+-webkit-box-shadow: 0 4px 15px 2px rgba(0,0,0,0.2);
+box-shadow: 0 1px 10px 2px rgba(0,0,0,0.3);
+    
+    
+}

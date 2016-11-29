@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+
+    <!--BOOTSTRAP-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="angular/app.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="inicioCtrl">
+
+<div class="main">
+
+    <div class="menu">
+        <a href="index.html"><img src="images/logo-black.png" alt=""></a>
+        <input type="text" value="" placeholder="Busca un clasificado">
+        <!-- iconos de fina coquetería :v-->
+        <div class="iconsMenu">
+
+            <a href="" data-target="#favoritos" class="" data-toggle="modal"><img src="images/favoritos.png" alt=""></a>
+
+            <a href="" data-target="#hacerPublicacion" class="" data-toggle="modal"><img src="images/agregar.png"
+                                                                                         alt=""></a>
+
+            <a href="#"><img src="images/notificacion.png" alt=""></a>
+
+        </div>
+    </div>
+
+    <!--zona de publicaciones-->
+
+    <div class="zona-cards">
+
+
+        <a href="" data-target="#Publicacion" class="" data-toggle="modal" ng-repeat="p in publicaciones">
+            <div class="cardview" ng-click="seleccionarItem(p)">
+                <img src="{{p.dir_foto_publicacion}}" alt="">
+
+                <!--descripcion de esta vuelta-->
+                <h2>{{p.titulo}}</h2>
+                <p>{{p.contenido}}</p>
+                <!--                  nombre del creador-->
+
+                <div class="user">
+
+                    <img src="images/notificacion.png" alt="">
+                    <h3>{{p.nombres}} {{p.apellidos}}</h3>
+                </div>
+                <p>{{p.fecha}}</p>
+
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+
+<!----------------------MODAL QUE VISUALIZA CADA PUBLICACIÓN--------------->
+<!--
+  
+  <!-- Modal -->
+<div class="modal fade" id="Publicacion" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--         boton de cerrar-->
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!--     Titulo publicacion -->
+
+                <h1 class="modal-title">{{seleccionado.titulo}}</h1>
+            </div>
+
+            <div class="visualizacionModal">
+                <p></p>
+                <div class="areaImagen">
+                    <img src="{{seleccionado.dir_foto_publicacion}}" alt="">
+                </div>
+
+                <div class="infoPublicacion">
+
+                    <div class="user">
+
+                        <img src="images/notificacion.png" alt="">
+                        <h3>{{seleccionado.nombres}} {{seleccionado.apellidos}}</h3>
+                    </div>
+
+                    <h3>Clasificar</h3>
+
+                    <h3>Contacto: {{seleccionado.numero_contacto}}</h3>
+
+                </div>
+
+                <p>{{seleccionado.contenido}}</p>
+
+                <form class="areaChat">
+                    <input type="text" value=""
+                           placeholder="Busca un clasificado"
+                           ng-model="mensaje">
+
+                    <input type="submit"
+                           value="Comentar"
+                           ng-click="subirComentario(seleccionado.id_publicacion,1,mensaje)">
+                </form>
+
+                <div class="areaComentarios" ng-repeat="m in mensajes">
+                    <div class="comentario"><h3>{{m.nombres}} {{m.apellidos}}</h3>
+                        <p>{{m.contenido}}</p></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!--  MODAL ENCARGADO DE  SUBIR UNA IMAGEN -------------------------------->
+
+<!-- Modal -->
+<div class="modal fade" id="hacerPublicacion" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--         boton de cerrar-->
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!--     Titulo publicacion -->
+
+                <h1 class="modal-title">Hacer Publicación</h1>
+            </div>
+
+            <div
+                    class="visualizacionModal"
+                    ng-controller="formularioCtrl">
+
+                <form action="/servicios/publicaciones" method="post" enctype="multipart/form-data">
+
+
+                    <!-- FORMULARIO -->
+                    <input class="form-control"
+                           type="text"
+                           value="ss"
+                           placeholder="Titulo Clasificado"
+                           id="titulo"
+                           name="titulo"><br>
+
+                    <textarea
+                            class="form-control"
+                            placeHolder="Descripción" rows="5"
+                            name="contenido" required>
+
+                    </textarea>
+
+                    <br>
+
+                    <input
+                            class="form-control"
+                            type="text" value=""
+                            placeholder="Telefono Contacto"
+                            name="numero_contacto"><br>
+
+                    <label>Selecciona la fotografía</label>
+                    <input class="form-control"
+                           type="file"
+                           name="photo"
+                           placeholder="Selecciona un archivo"
+                           name="imagen">
+                    <br>
+
+                    <input class="form-control"
+                           list="Categoria"
+                           placeholder="Seleccione Categoría"
+                           type="text" name="categoria"
+                           name="categoria">
+
+                    <datalist id="Categoria" name="tag">
+                        <option value="Libros">
+                        </option>
+                    </datalist>
+                    <br>
+                    2
+                    <input type="submit" value="Subir">
+                    <!-- FIN FORMULARIO-->
+                </form>
+                </section>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--  MODAL ENCARGADO DE IR A LA SECCIÓN DE FAVORITOS -------------------------------->
+
+<!-- Modal -->
+<div class="modal fade" id="favoritos" role="dialog">
+    <div class="modal-dialog modal-mid">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--         boton de cerrar-->
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!--     Titulo publicacion -->
+
+                <h1 class="modal-title">Hacer Publicación</h1>
+            </div>
+
+            <div class="visualizacionModal">
+
+                <div class="seccionFavoritos">
+
+
+                    <!--<div class="cardFavorito">-->
+                        <!--<img src="images/publicacion.jpg" alt="">-->
+                        <!--<div class="favorito">-->
+                            <!--<h2>Titulo Publicacion</h2>-->
+                            <!--<h4>Nombre Creador</h4>-->
+                            <!--<h3>318 711 3332</h3>-->
+                            <!--<button type="button" class="btn btn-default">Ver Publicación</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+
+                    <div class="cardFavorito" ng-repeat="f in favoritos">
+                    <img src="images/publicacion.jpg" alt="">
+                    <div class="favorito">
+                    <h2>Titulo Publicacion</h2>
+                    <h4>Nombre Creador</h4>
+                    <h3>318 711 3332</h3>
+                    <button type="button" class="btn btn-default">Ver Publicación</button>
+                    </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
