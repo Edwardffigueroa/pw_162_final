@@ -96,7 +96,9 @@ app.controller("inicioCtrl", function ($window, $scope, $http) {
     $scope.verfavoritos= function (id_usuario) {
         $http.get("/servicios/favoritos/"+id_usuario).then(function (response) {
             console.log("se trajo los favoritos");
+
             $scope.favoritos = response.data;
+            console.log($scope.favoritos[0]);
         });
     }
 

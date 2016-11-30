@@ -29,7 +29,7 @@
         <!-- iconos de fina coquetería :v-->
         <div class="iconsMenu">
 
-            <a href="" data-target="#favoritos" class="" data-toggle="modal"><img src="images/favoritos.png" alt=""></a>
+            <a href="" data-target="#favoritos" class="" ng-click="verfavoritos(1)" data-toggle="modal"><img src="images/favoritos.png" alt=""></a>
 
             <a href="" data-target="#hacerPublicacion" class="" data-toggle="modal"><img src="images/agregar.png"
                                                                                          alt=""></a>
@@ -247,11 +247,11 @@
 
 
                     <div class="cardFavorito" ng-repeat="f in favoritos">
-                    <img src="images/publicacion.jpg" alt="">
+                    <img src="{{f.dir_foto_publicacion}}" alt="">
                     <div class="favorito">
-                    <h2>Titulo Publicacion</h2>
-                    <h4>Nombre Creador</h4>
-                    <h3>318 711 3332</h3>
+                    <h2>{{f.titulo}}</h2>
+                    <h4>{{f.id_usuario}}</h4>
+                    <h3>{{f.numero_contacto}}</h3>
                     <button type="button" class="btn btn-default">Ver Publicación</button>
                     </div>
                     </div>

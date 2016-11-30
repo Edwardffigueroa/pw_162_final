@@ -10,9 +10,8 @@ var route_cursos = express.Router();// exporto la ruta
 module.exports = function () {
     route_cursos.use(bodyParser.json());
 
-    route_cursos.route('/:id_publiacacion').get(function (req, res) {
+    route_cursos.route('/:id_usuario').get(function (req, res) {
         console.log('se llamó el metodo get de favoritos');
-
         favoritos.traerFavoritos(req.params.id_usuario, function (error, names) {
             if (!error) {
                 res.json(names);
